@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #7a7e85;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">qrcode</span>
+
+<span class="s2"># Text or URL to encode</span>
+<span class="s1">data </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Enter the text or URL to encode in QR code: &quot;</span><span class="s3">)</span>
+
+<span class="s2"># Generate QR Code</span>
+<span class="s1">qr </span><span class="s3">= </span><span class="s1">qrcode</span><span class="s3">.</span><span class="s1">QRCode</span><span class="s3">(</span>
+    <span class="s1">version</span><span class="s3">=</span><span class="s5">1</span><span class="s3">,</span>
+    <span class="s1">error_correction</span><span class="s3">=</span><span class="s1">qrcode</span><span class="s3">.</span><span class="s1">constants</span><span class="s3">.</span><span class="s1">ERROR_CORRECT_H</span><span class="s3">,</span>
+    <span class="s1">box_size</span><span class="s3">=</span><span class="s5">10</span><span class="s3">,</span>
+    <span class="s1">border</span><span class="s3">=</span><span class="s5">4</span><span class="s3">,</span>
+<span class="s3">)</span>
+<span class="s1">qr</span><span class="s3">.</span><span class="s1">add_data</span><span class="s3">(</span><span class="s1">data</span><span class="s3">)</span>
+<span class="s1">qr</span><span class="s3">.</span><span class="s1">make</span><span class="s3">(</span><span class="s1">fit</span><span class="s3">=</span><span class="s0">True</span><span class="s3">)</span>
+
+<span class="s2"># Create the image</span>
+<span class="s1">img </span><span class="s3">= </span><span class="s1">qr</span><span class="s3">.</span><span class="s1">make_image</span><span class="s3">(</span><span class="s1">fill_color</span><span class="s3">=</span><span class="s4">&quot;black&quot;</span><span class="s3">, </span><span class="s1">back_color</span><span class="s3">=</span><span class="s4">&quot;white&quot;</span><span class="s3">)</span>
+
+<span class="s2"># Save the image</span>
+<span class="s1">img</span><span class="s3">.</span><span class="s1">save</span><span class="s3">(</span><span class="s4">&quot;my_qr_code.png&quot;</span><span class="s3">)</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;✅ QR Code generated and saved as my_qr_code.png&quot;</span><span class="s3">)</span></pre>
+</body>
+</html>
